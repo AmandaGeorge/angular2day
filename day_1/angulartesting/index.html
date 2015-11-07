@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Angular Testing</title>
+</head>
+<body ng-controller="testCtrl">
+
+	<input type="text" ng-model="userText" />
+
+	<div>
+		{{userText}}
+	</div>
+	<br>
+	<table>
+		<thead>
+			<th>Firstname</th>
+			<th>Lastname</th>
+			<th>Username</th>
+			<th>Age</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="user in users">
+				<td>{{user.firstname}}</td>
+				<td>{{user.lastname}}</td>
+				<td>{{user.username}}</td>
+				<td>{{user.age}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<div>
+		<div>First Name</div>
+		<div>
+			<input type="text" ng-model="userData.firstname" placeholder="First Name" />
+		</div>
+		<div>Last Name</div>
+		<div>
+			<input type="text" ng-model="userData.lastname" placeholder="Last Name" />
+		</div>
+		<div>Username</div>
+		<div>
+			<input type="text" ng-model="userData.username" placeholder="Username" />
+		</div>
+		<div>Age</div>
+		<div>
+			<input type="text" ng-model="userData.age" placeholder="Age" />
+		</div>
+		<div>
+			<button type="button" ng-click="submitUser();">Submit User</button>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+
+	<script src="app.js"></script>
+</body>
+</html>
