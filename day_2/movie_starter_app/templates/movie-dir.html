@@ -1,0 +1,72 @@
+<div id="container"></div>
+
+<!--Home Page-->
+<div id="search-input-box" class="border-radius" ng-hide="clickSearch">
+	<h2 class="txt-center">Search for Films</h2>
+
+	<div class="row">
+		<div class="col-sm-12">
+			<input id="movie-title" class="form-control" type="text" placeholder="Movie Title" ng-model="searchTitle" />
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-12 txt-center">
+			<a id="movie-search-button" class="btn btn-primary margin-top-20" ng-click="searchMovies();">Search</a>
+		</div>
+	</div>
+</div>
+<!--/Home Page-->
+
+<!--Movie Cards-->
+<div class="movie-card border-radius margin-top-20" ng-show="clickSearch">
+	<div class="row">
+		<div class="col-sm-4">
+			<img ng-src="{{movie.Poster}}" class="img-responsive movie-poster" />
+		</div>
+		<div class="col-sm-8">
+			<h3 style="margin-top:0;">{{movie.Title}}</h3>
+
+			<div class="row margin-top-20">
+				<div class="col-sm-4">
+					<strong>Year: </strong>{{movie.Year}}
+				</div>
+				<div class="col-sm-4">
+					<strong>Rated: </strong>{{movie.Rated}}
+				</div>
+				<div class="col-sm-4">
+					<strong>Released: </strong>{{movie.Released}}
+				</div>
+			</div>
+
+			<div class="row margin-top-20">
+				<div class="col-sm-4">
+					<strong>Runtime: </strong>{{movie.Runtime}}
+				</div>
+				<div class="col-sm-4">
+					<strong>Genre: </strong>{{movie.Genre}}
+				</div>
+				<div class="col-sm-4">
+					<strong>Director: </strong>{{movie.Director}}
+				</div>
+			</div>
+
+			<div class="row margin-top-20">
+				<div class="col-sm-12">
+					<strong>Actors: </strong>{{movie.Actors}}
+				</div>
+			</div>
+
+			<div class="row margin-top-20">
+				<div class="col-sm-12">
+					<strong>Plot: </strong>{{movie.Plot}}
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<button class="btn btn-primary" ng-click="resetSearch();">Search Again</button>
+	</div>
+</div>
+<!--/Movie Cards-->

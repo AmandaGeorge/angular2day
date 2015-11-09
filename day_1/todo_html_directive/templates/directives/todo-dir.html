@@ -1,0 +1,19 @@
+<div class="small-container well">
+	<div class="bold">
+		What do you want to do today?
+	</div>
+
+	<div class="margin-top-20">
+		<input type="text" class="form-control" placeholder="Your todo..." ng-model="description" />
+	</div>
+
+	<div class="margin-top-20">
+		<button type="button" id="submit-todo" class="btn btn-primary" ng-click="submitTodo();">Submit Todo</button>
+	</div>
+</div>
+{{userText}}
+<div id="todo-list" class="small-container">
+	<ol>
+		<li ng-repeat="todo in todos" ng-class="{ completed: deletedTodos.indexOf($index) > -1 }">{{todo.description}} <a href="#" ng-click="deleteTodo($event, $index);">Delete</a></li>
+	</ol>
+</div>
